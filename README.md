@@ -8,6 +8,73 @@ Group 76 members:
 - Charalampos Stathopoulos
 - Matteo D'Souza
 
+### **Repository Structure**
+
+```
+.github/                       # GitHub actions and dependabot
+├── dependabot.yml             # Dependabot configuration
+├── workflows/                 # GitHub workflows
+│   └── tests.yaml             # CI/CD workflow file
+configs/                       # Configuration files
+data/                          # Data directory
+├── processed/                 # Processed data
+├── raw/                       # Raw data
+dockerfiles/                   # Dockerfiles
+├── api.Dockerfile             # Dockerfile for API
+└── train.Dockerfile           # Dockerfile for training
+docs/                          # Documentation
+├── mkdocs.yml                 # MkDocs configuration
+└── source/                    # Documentation source files
+    └── index.md               # Documentation index
+models/                        # Trained models
+notebooks/                     # Jupyter notebooks
+reports/                       # Reports
+└── figures/                   # Figures for reports
+src/                           # Source code
+├── project_name/              # Project-specific code
+│   ├── __init__.py            # Package initializer
+│   ├── api.py                 # API-related code
+│   ├── data.py                # Data loading and preprocessing
+│   ├── evaluate.py            # Model evaluation script
+│   ├── models.py              # Model architecture
+│   ├── train.py               # Model training script
+│   └── visualize.py           # Data/model visualizations
+tests/                         # Tests
+├── __init__.py                # Test package initializer
+├── test_api.py                # API tests
+├── test_data.py               # Data loading tests
+└── test_model.py              # Model tests
+.gitignore                     # Files to ignore in version control
+.pre-commit-config.yaml        # Pre-commit hook configuration
+LICENSE                        # Project license
+pyproject.toml                 # Python project configuration
+README.md                      # Project README
+requirements.txt               # Project requirements
+requirements_dev.txt           # Development requirements
+tasks.py                       # Project task definitions
+
+
+```
+
+### **1-Clone the Repository**
+1. Open your terminal.
+2. Run the following command:
+   git clone https://github.com/aliberkgezgin/MLOPS-76-Project-.git
+
+### **2-Create a new Conda Environment**
+1. Using Conda
+
+conda create --name musk-sentiment python=3.9
+conda activate musk-sentiment
+
+2. Install the required packages:
+
+pip install -r requirements.txt
+
+### **3-To resolve dependancy conflicts:**
+
+pip install -r requirements.txt --use-deprecated=legacy-resolver
+
 # **Description of the Project**
 
 Welcome to our MLOps project for classifying Elon Musk’s mood based on his Tweets. In this project, we will perform sentiment analysis on text data from Twitter. Our main goal is to learn the basics of MLOps while building a simple model that can rate and categorize Elon Musk’s emotional tone.
