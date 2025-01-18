@@ -12,15 +12,23 @@ Group 76 members:
 
 ```
 MLOPS-76-Project/
-├── README.md              # Project setup instructions
-├── requirements.txt       # List of Python dependencies
-├── data/                  # Folder for datasets (optional)
-├── src/                   # Source code for the project
-│   ├── data.py            # Data loading and preprocessing
-│   ├── train.py           # Model training script
-│   ├── model.py           # Model architecture definition
-│   └── predict.py         # Script for making predictions
-└── notebooks/             # Jupyter notebooks for exploration (optional)
+├── README.md              # Project description, setup instructions, and usage guidelines
+├── requirements.txt       # List of Python dependencies for the project
+├── .gitignore             # Optional: Files and folders to ignore in the repository
+├── data/                  # Folder for storing dataset-related files (if applicable)
+│   └── raw/               # Raw datasets (optional, typically not uploaded)
+├── src/                   # Source code directory
+│   ├── __init__.py        # Marks this directory as a Python package
+│   ├── data.py            # Script for handling data loading and preprocessing
+│   ├── train.py           # Script for training the model
+│   ├── model.py           # Script defining the model architecture
+│   └── predict.py         # Script for making predictions or running inference
+├── notebooks/             # Jupyter notebooks for exploratory data analysis or prototyping
+│   └── analysis.ipynb     # Example notebook (optional)
+└── reports/               # Reports folder for results, figures, or presentations (optional)
+    ├── REPORT.md          # Documentation for reports
+    └── figures/           # Visualizations or figures for reports
+
 ```
 
 ### **1-Clone the Repository**
