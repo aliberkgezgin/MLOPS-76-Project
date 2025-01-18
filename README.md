@@ -1,108 +1,57 @@
-# MLOPS-76-Project
-This is the repository for the final project of 02476 MLOPS course of DTU for Winter 2025 period.
+MLOPS-76-Project
+==============================
 
-Group 76 members:
-- Lars Kæraa Lücke
-- Ali Berk Gezgin
-- Jónas Ingi Valdimarsson
-- Charalampos Stathopoulos
-- Matteo D'Souza
+Sentiment analysis on Elon Musk's tweets using DistilBERT.
 
-### **Repository Structure**
+Project Organization
+------------
 
-```
-.github/                       # GitHub actions and dependabot
-├── dependabot.yml             # Dependabot configuration
-├── workflows/                 # GitHub workflows
-│   └── tests.yaml             # CI/CD workflow file
-configs/                       # Configuration files
-data/                          # Data directory
-├── processed/                 # Processed data
-├── raw/                       # Raw data
-dockerfiles/                   # Dockerfiles
-├── api.Dockerfile             # Dockerfile for API
-└── train.Dockerfile           # Dockerfile for training
-docs/                          # Documentation
-├── mkdocs.yml                 # MkDocs configuration
-└── source/                    # Documentation source files
-    └── index.md               # Documentation index
-models/                        # Trained models
-notebooks/                     # Jupyter notebooks
-reports/                       # Reports
-└── figures/                   # Figures for reports
-src/                           # Source code
-├── project_name/              # Project-specific code
-│   ├── __init__.py            # Package initializer
-│   ├── api.py                 # API-related code
-│   ├── data.py                # Data loading and preprocessing
-│   ├── evaluate.py            # Model evaluation script
-│   ├── models.py              # Model architecture
-│   ├── train.py               # Model training script
-│   └── visualize.py           # Data/model visualizations
-tests/                         # Tests
-├── __init__.py                # Test package initializer
-├── test_api.py                # API tests
-├── test_data.py               # Data loading tests
-└── test_model.py              # Model tests
-.gitignore                     # Files to ignore in version control
-.pre-commit-config.yaml        # Pre-commit hook configuration
-LICENSE                        # Project license
-pyproject.toml                 # Python project configuration
-README.md                      # Project README
-requirements.txt               # Project requirements
-requirements_dev.txt           # Development requirements
-tasks.py                       # Project task definitions
+    ├── LICENSE
+    ├── Makefile           <- Makefile with commands like `make data` or `make train`
+    ├── README.md          <- The top-level README for developers using this project.
+    ├── data
+    │   ├── external       <- Data from third party sources.
+    │   ├── interim        <- Intermediate data that has been transformed.
+    │   ├── processed      <- The final, canonical data sets for modeling.
+    │   └── raw            <- The original, immutable data dump.
+    │
+    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    │
+    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    │
+    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+    │                         the creator's initials, and a short `-` delimited description, e.g.
+    │                         `1.0-jqp-initial-data-exploration`.
+    │
+    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+    │
+    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+    │   └── figures        <- Generated graphics and figures to be used in reporting
+    │
+    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+    │                         generated with `pip freeze > requirements.txt`
+    │
+    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
+    ├── src                <- Source code for use in this project.
+    │   ├── __init__.py    <- Makes src a Python module
+    │   │
+    │   ├── data           <- Scripts to download or generate data
+    │   │   └── make_dataset.py
+    │   │
+    │   ├── features       <- Scripts to turn raw data into features for modeling
+    │   │   └── build_features.py
+    │   │
+    │   ├── models         <- Scripts to train models and then use trained models to make
+    │   │   │                 predictions
+    │   │   ├── predict_model.py
+    │   │   └── train_model.py
+    │   │
+    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    │       └── visualize.py
+    │
+    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
-```
+--------
 
-### **1-Clone the Repository**
-1. Open your terminal.
-2. Run the following command:
-   git clone https://github.com/aliberkgezgin/MLOPS-76-Project-.git
-
-### **2-Create a new Conda Environment**
-1. Using Conda
-
-conda create --name musk-sentiment python=3.9
-conda activate musk-sentiment
-
-2. Install the required packages:
-
-pip install -r requirements.txt
-
-### **3-To resolve dependancy conflicts:**
-
-pip install -r requirements.txt --use-deprecated=legacy-resolver
-
-# **Description of the Project**
-
-Welcome to our MLOps project for classifying Elon Musk’s mood based on his Tweets. In this project, we will perform sentiment analysis on text data from Twitter. Our main goal is to learn the basics of MLOps while building a simple model that can rate and categorize Elon Musk’s emotional tone.
-
-## **1. Dataset:**
-
-We plan to work with a collection of Elon Musk’s tweets. We will gather these from Twitter, focusing on recent posts or a chosen timeframe. This dataset will include each tweet’s text and the date and other useful metadata. Our aim is to keep it straightforward, so we will mainly use the text as input.
-
-## **2. Model:**
-
-For this project, we are planning to work with a pre-trained model called DistilBERT. It is a smaller and faster version of BERT, which is a popular language model for many NLP tasks. DistilBERT is good for sentiment analysis because it is both accurate and quick to run.
-
-## **3. PyTorch-Based Third-Party Package:**
-
-We will rely on the Hugging Face Transformers library. This library supports PyTorch and gives us many pre-trained models, including DistilBERT. It also provides helpful tools for tokenization and fine-tuning.
-
-## **4. Project Goal:**
-
-The main goal is to predict the sentiment or mood (positive, negative, or neutral) of Elon Musk’s tweets. By doing this, we hope to learn how to train, deploy, and manage machine learning models in an MLOps setting. We also want to practice best practices for code organization and version control.
-
-## **5. MLOps Frameworks:**
-
-We intend to use a few simple frameworks. First, we will use MLflow for experiment tracking, so we can keep records of our runs, hyperparameters, and metrics. Second, we will use FastAPI to create a simple REST API for model predictions. We may also use Docker to containerize our application for easy deployment. Everything will be tracked with Git for version control.
-
-## **6. Data:**
-
-Our data will be the text from Elon Musk’s tweets. We will run them through the DistilBERT model for sentiment analysis. This text data is easy to collect from Twitter with public APIs or already available datasets from Kaggle.
-
-## **7. Expected Models:**
-
-We plan to use DistilBERT for sentiment classification. Later, if we want more advanced analysis, we could explore other Transformer models, but we will start with DistilBERT due to its simplicity and speed.
+<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
