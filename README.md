@@ -27,7 +27,7 @@ MLOPS-76-Project/
 1. Open your terminal.
 2. Run the following command:
    git clone https://github.com/aliberkgezgin/MLOPS-76-Project-.git
-   cd MLOPS-76-Project-
+
 ### **2-Create a new Conda Environmnet**
 1. Using Conda
 
