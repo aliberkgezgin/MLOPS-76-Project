@@ -71,6 +71,10 @@ conda activate musk-sentiment
 
 pip install -r requirements.txt
 
+### **3-To resolve dependancy conflicts:**
+
+pip install -r requirements.txt --use-deprecated=legacy-resolver
+
 # **Description of the Project**
 
 Welcome to our MLOps project for classifying Elon Musk’s mood based on his Tweets. In this project, we will perform sentiment analysis on text data from Twitter. Our main goal is to learn the basics of MLOps while building a simple model that can rate and categorize Elon Musk’s emotional tone.
