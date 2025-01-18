@@ -11,23 +11,48 @@ Group 76 members:
 ### **Repository Structure**
 
 ```
-MLOPS-76-Project/
-├── README.md              # Project description, setup instructions, and usage guidelines
-├── requirements.txt       # List of Python dependencies for the project
-├── .gitignore             # Optional: Files and folders to ignore in the repository
-├── data/                  # Folder for storing dataset-related files (if applicable)
-│   └── raw/               # Raw datasets (optional, typically not uploaded)
-├── src/                   # Source code directory
-│   ├── __init__.py        # Marks this directory as a Python package
-│   ├── data.py            # Script for handling data loading and preprocessing
-│   ├── train.py           # Script for training the model
-│   ├── model.py           # Script defining the model architecture
-│   └── predict.py         # Script for making predictions or running inference
-├── notebooks/             # Jupyter notebooks for exploratory data analysis or prototyping
-│   └── analysis.ipynb     # Example notebook (optional)
-└── reports/               # Reports folder for results, figures, or presentations (optional)
-    ├── REPORT.md          # Documentation for reports
-    └── figures/           # Visualizations or figures for reports
+.github/                       # GitHub actions and dependabot
+├── dependabot.yml             # Dependabot configuration
+├── workflows/                 # GitHub workflows
+│   └── tests.yaml             # CI/CD workflow file
+configs/                       # Configuration files
+data/                          # Data directory
+├── processed/                 # Processed data
+├── raw/                       # Raw data
+dockerfiles/                   # Dockerfiles
+├── api.Dockerfile             # Dockerfile for API
+└── train.Dockerfile           # Dockerfile for training
+docs/                          # Documentation
+├── mkdocs.yml                 # MkDocs configuration
+└── source/                    # Documentation source files
+    └── index.md               # Documentation index
+models/                        # Trained models
+notebooks/                     # Jupyter notebooks
+reports/                       # Reports
+└── figures/                   # Figures for reports
+src/                           # Source code
+├── project_name/              # Project-specific code
+│   ├── __init__.py            # Package initializer
+│   ├── api.py                 # API-related code
+│   ├── data.py                # Data loading and preprocessing
+│   ├── evaluate.py            # Model evaluation script
+│   ├── models.py              # Model architecture
+│   ├── train.py               # Model training script
+│   └── visualize.py           # Data/model visualizations
+tests/                         # Tests
+├── __init__.py                # Test package initializer
+├── test_api.py                # API tests
+├── test_data.py               # Data loading tests
+└── test_model.py              # Model tests
+.gitignore                     # Files to ignore in version control
+.pre-commit-config.yaml        # Pre-commit hook configuration
+LICENSE                        # Project license
+pyproject.toml                 # Python project configuration
+README.md                      # Project README
+requirements.txt               # Project requirements
+requirements_dev.txt           # Development requirements
+tasks.py                       # Project task definitions
+
 
 ```
 
