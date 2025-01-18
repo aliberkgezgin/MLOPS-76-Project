@@ -8,6 +8,23 @@ Group 76 members:
 - Charalampos Stathopoulos
 - Matteo D'Souza
 
+### **Repository Structure**
+MLOPS-76-Project/ ├── README.md # Project setup instructions ├── requirements.txt # List of Python dependencies ├── data/ # Folder for datasets (optional) ├── src/ # Source code for the project │ ├── data.py # Data loading and preprocessing │ ├── train.py # Model training script │ ├── model.py # Model architecture definition │ └── predict.py # Script for making predictions └── notebooks/ # Jupyter notebooks for exploration (optional)
+### **1-Clone the Repository**
+1. Open your terminal.
+2. Run the following command:
+   git clone https://github.com/aliberkgezgin/MLOPS-76-Project-.git
+   cd MLOPS-76-Project-
+### **2-Create a new Conda Environmnet**
+1. Using Conda
+
+conda create --name musk-sentiment python=3.9
+conda activate musk-sentiment
+
+2. Install the required packages:
+
+pip install -r requirements.txt
+
 # **Description of the Project**
 
 Welcome to our MLOps project for classifying Elon Musk’s mood based on his Tweets. In this project, we will perform sentiment analysis on text data from Twitter. Our main goal is to learn the basics of MLOps while building a simple model that can rate and categorize Elon Musk’s emotional tone.
