@@ -9,6 +9,7 @@ Group 76 members:
 - Matteo D'Souza
 
 ### **Repository Structure**
+
 MLOPS-76-Project/
 ├── README.md              # Project setup instructions
 ├── requirements.txt       # List of Python dependencies
