@@ -10,7 +10,8 @@ Group 76 members:
 
 ### **Repository Structure**
 
-```MLOPS-76-Project/
+```
+MLOPS-76-Project/
 ├── README.md              # Project setup instructions
 ├── requirements.txt       # List of Python dependencies
 ├── data/                  # Folder for datasets (optional)
