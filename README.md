@@ -28,7 +28,7 @@ MLOPS-76-Project/
 2. Run the following command:
    git clone https://github.com/aliberkgezgin/MLOPS-76-Project-.git
 
-### **2-Create a new Conda Environmnet**
+### **2-Create a new Conda Environment**
 1. Using Conda
 
 conda create --name musk-sentiment python=3.9
