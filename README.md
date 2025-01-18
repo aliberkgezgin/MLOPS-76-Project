@@ -9,7 +9,17 @@ Group 76 members:
 - Matteo D'Souza
 
 ### **Repository Structure**
-MLOPS-76-Project/ ├── README.md # Project setup instructions ├── requirements.txt # List of Python dependencies ├── data/ # Folder for datasets (optional) ├── src/ # Source code for the project │ ├── data.py # Data loading and preprocessing │ ├── train.py # Model training script │ ├── model.py # Model architecture definition │ └── predict.py # Script for making predictions └── notebooks/ # Jupyter notebooks for exploration (optional)
+MLOPS-76-Project/
+├── README.md              # Project setup instructions
+├── requirements.txt       # List of Python dependencies
+├── data/                  # Folder for datasets (optional)
+├── src/                   # Source code for the project
+│   ├── data.py            # Data loading and preprocessing
+│   ├── train.py           # Model training script
+│   ├── model.py           # Model architecture definition
+│   └── predict.py         # Script for making predictions
+└── notebooks/             # Jupyter notebooks for exploration (optional)
+
 ### **1-Clone the Repository**
 1. Open your terminal.
 2. Run the following command:
