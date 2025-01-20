@@ -38,7 +38,7 @@ async def process_tweet(tweet_input: TweetInput):
     Endpoint to process a tweet-like text input.
     """
     # Initialize sentiment analysis pipeline
-    sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased")
+    sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
     # Analyze sentiment
     sentiment = sentiment_analyzer(tweet_input.tweet)
     return {
