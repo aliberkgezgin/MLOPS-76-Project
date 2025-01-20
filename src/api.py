@@ -1,11 +1,10 @@
-from fastapi import Depends, FastAPI, Header, Query
-from pydantic import BaseModel, Field
+from fastapi import FastAPI, Query
 from datetime import date
 from contextlib import asynccontextmanager
 import logging
 from transformers import pipeline
 
-from src.dto import TweetInput, DateInput
+from src.dto import TweetInput
 
 
 # Initialize logger
