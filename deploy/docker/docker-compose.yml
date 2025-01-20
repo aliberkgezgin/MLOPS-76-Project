@@ -1,0 +1,9 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile
+    image: lkl-python:${LKL_PYTHON_VERSION:-latest}
+    restart: always
+    env_file:
+      - .env

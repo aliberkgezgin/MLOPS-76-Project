@@ -56,6 +56,23 @@ tasks.py                       # Project task definitions
 
 ```
 
+## Running
+
+### Serve
+
+* Verify pytorch variant (default is cpu)
+* `make run`
+* docs => `http://localhost:8000/docs`
+```
+curl -X 'POST' \
+    'http://localhost:8000/process_tweet/' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "tweet": "This is a sample tweet!"
+}'
+```
+
 ### **1-Clone the Repository**
 1. Open your terminal.
 2. Run the following command:
