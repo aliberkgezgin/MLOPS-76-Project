@@ -1,0 +1,84 @@
+name: Code styling + tests
+
+on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    types: [opened, synchronize]
+  workflow_dispatch:
+
+
+env:
+  PYTHON_VERSION: 3.11.8
+  POETRY_VERSION: 1.2.2
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Load cached Poetry installation
+        uses: actions/cache@v3
+        with:
+          path: ~/.local
+          key: poetry-10 # increment to reset cache
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: ${{ env.POETRY_VERSION }}
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-lint-${{ hashFiles('**/poetry.lock') }}
+      - name: Install dependencies
+        run: poetry install --without test
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      - name: Run black check
+        run: poetry run black --check .
+      - name: Run isort check
+        run: poetry run isort -c .
+      # - name: Run flake8 check
+      #   run: poetry run flake8 --count src
+      - name: Run mypy check
+        run: poetry run mypy src
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Load cached Poetry installation
+        uses: actions/cache@v3
+        with:
+          path: ~/.local
+          key: poetry-10 # increment to reset cache
+      - name: Install poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: ${{ env.POETRY_VERSION }}
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-test-${{ hashFiles('**/poetry.lock') }}
+      - name: Install dependencies
+        run: poetry install --without lint
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      - name: Copy env.POETRY_VERSION
+        run: cp .env.example .env
+      - name: Run pytest check
+        run: poetry run pytest -vv --cov="src" --ignore=tests/benchmark .
