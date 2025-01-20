@@ -98,6 +98,7 @@ def save_preprocessed_data(data, output_path):
 # Main execution
 if __name__ == "__main__":
     # Define file paths
+    # TODO: Move path to conf
     raw_data_path = r"C:\Users\45502\Desktop\MLOPS\MLOPS-76-Project\data\raw\elon_musk_tweets.csv"
     preprocessed_data_path = r"C:\Users\45502\Desktop\MLOPS\MLOPS-76-Project\data\preprocessed\clean_data.csv"
 

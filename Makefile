@@ -10,15 +10,28 @@ PROFILE = default
 PROJECT_NAME = MLOPS-76-Project
 PYTHON_INTERPRETER = python3
 
-ifeq (,$(shell which conda))
+# ifeq (,$(shell which conda))
 HAS_CONDA=False
-else
-HAS_CONDA=True
-endif
+# else
+# HAS_CONDA=True
+# endif
 
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
+
+.PHONY: replace-env
+replace-env:  ## Use to update existing .env with .env.example
+	cp .env.example .env
+
+.env:  ## Copy .env.example to .env
+	cp .env.example .env
+
+build: .env
+	docker-compose -f deploy/docker/docker-compose.yml --project-directory . build
+
+run: build   ## Run the project
+	docker-compose -f deploy/docker/docker-compose.yml -f deploy/docker/docker-compose.local.yml --project-directory . up
 
 ## Install Python Dependencies
 requirements: test_environment
