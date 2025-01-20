@@ -1,0 +1,18 @@
+outs:
+- hash: md5
+  path: data
+  files:
+  - relpath: preprocessed/clean_data.csv
+    md5: 596f411d8267823ed8c1da623314cba1
+    size: 389960
+    cloud:
+      remote_storage:
+        etag: 08a39a92d2a3848b031001
+        version_id: '1737375378345251'
+  - relpath: raw/elon_musk_tweets.csv
+    md5: 5c928dab6b2bf6beb1224e1a46c336bf
+    size: 1323435
+    cloud:
+      remote_storage:
+        etag: 08e6f4ded1a3848b031001
+        version_id: '1737375377504870'
