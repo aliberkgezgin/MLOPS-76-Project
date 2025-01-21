@@ -76,7 +76,7 @@ curl -X 'POST' \
 ### **1-Clone the Repository**
 1. Open your terminal.
 2. Run the following command:
-   git clone https://github.com/aliberkgezgin/MLOPS-76-Project-.git
+   git clone https://github.com/Team-76-MLOps-DTU/MLOPS-76-Project
 
 ### **2-Create a new Conda Environment**
 1. Using Conda
